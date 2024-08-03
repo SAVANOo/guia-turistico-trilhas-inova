@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./src/bandeira-do-maranhao.ico" type="image/x-icon">
+    <title>Detalhes do Atrativo</title>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <header style="background: linear-gradient(to right,#c22529,#12558c, #049c45,#fbbc15, #f3911d);" class="p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="/src/Bandeira_do_Maranhao.png" alt="Logo" class="h-10 w-auto">
+                <h1 class="text-2xl font-bold text-white">Guia Turistico - Trilhas Inova</h1>
+            </div>
+            <nav>
+                <a href="/index" class="text-white hover:underline">Ver todos os destinos</a>
+            </nav>
+        </div>
+    </header>
+    <div class="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+        <h1 class="text-3xl font-bold mb-4">
+            <%= atrativo.titulo %>
+        </h1>
+        <p class="mb-2"><strong>Descrição:</strong>
+            <%= atrativo.descricao %>
+        </p>
+        <p class="mb-2"><strong>Tipo:</strong>
+            <%= atrativo.tipo %>
+        </p>
+        <% if (atrativo.avaliacao) { %>
+            <p class="mb-2"><strong>Avaliação:</strong>
+                <%= atrativo.avaliacao %>
+            </p>
+            <% } %>
+                <img class="w-full h-auto rounded mt-4 mb-4" src="<%= atrativo.urlFoto %>" alt="<%= atrativo.titulo %>">
+                <a href="/destino/show/<%= atrativo.destinoId %>" class="text-blue-500 hover:underline">Ver Destino</a>
+    </div>
+</body>
+
+</html>
